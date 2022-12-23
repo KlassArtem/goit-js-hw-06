@@ -12,3 +12,18 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const gallEl = document.querySelector('.gallery');
+
+const makeGallCard = ({ url, alt } = {}) => {
+  return `<li class="js-item"><img  class="js-image"  src="${url}" width="300px;" height="200px; alt="${alt}" ></li>`;
+};
+
+
+const galleryLiElements = images.map(makeGallCard).join('');
+
+gallEl.insertAdjacentHTML('beforeend', galleryLiElements);
+
+gallEl.style.listStyle = 'none';
+gallEl.style.display = 'Flex';
+gallEl.style.gap = '30px'
