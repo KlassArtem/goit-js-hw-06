@@ -6,7 +6,7 @@ const handleSubmit = (event) => {
     elements: { email, password }
     } = event.currentTarget;
     
-if (email.value === "" || password.value === "") {
+if (email.value.trim() === "" || password.value.trim() === "") {
 return alert("Nothing㋡");
 }
     const objForm = {
@@ -20,3 +20,5 @@ return alert("Nothing㋡");
 }
 
 formBtnEl.addEventListener("submit", handleSubmit);
+
+// add trim()

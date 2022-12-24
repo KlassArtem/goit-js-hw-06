@@ -1,15 +1,25 @@
-const validationInputElement = document.querySelector('#validation-input');
 
 
-const checkNumbers = () => {
-    if (validationInputElement.value.length === Number(validationInputElement.dataset.length)) {
-        validationInputElement.classList.remove(`invalid`);
-        validationInputElement.classList.add(`valid`);
-        return;
-    } else {
-        validationInputElement.classList.remove(`valid`);
-        validationInputElement.classList.add(`invalid`);
-    };
+const inputMain = document.querySelector("#validation-input");
+
+const inputLength = Number(inputMain.dataset.length);
+
+inputMain.addEventListener("blur", handleInputTextLength);
+
+function handleInputTextLength(event) {
+  inputMain.classList.remove("valid", "invalid");
+
+  if (event.currentTarget.value.length === inputLength) {
+    validInputValue();
+  } else {
+    invalidInputValue();
+  }
 }
 
-validationInputElement.addEventListener('blur', checkNumbers);
+const validInputValue = () => {
+  inputMain.classList.add("valid");
+};
+
+const invalidInputValue = () => {
+  inputMain.classList.add("invalid");
+};

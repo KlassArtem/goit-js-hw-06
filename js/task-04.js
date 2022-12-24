@@ -1,15 +1,21 @@
-let counterValue = document.querySelector('#value');
+//  вирішив зробити код по новому 
 
-const decrementBtnEl = document.querySelector('button[data-action="decrement"]');
-const incrementBtnEl = document.querySelector('button[data-action="increment"]');
 
-const increment = () => {
-    counterValue.textContent = Number(counterValue.textContent) + 1;
-}
+let counterValue = 0;
+const decr = document.querySelector("button[data-action='decrement']");
+const incr = document.querySelector("button[data-action='increment']");
+const myValue = document.querySelector("#value");
 
-const decrement = () => {
-    counterValue.textContent = Number(counterValue.textContent) - 1;
-}
+const countDecr = function() {
+  counterValue -= 1;
+  myValue.textContent = counterValue;
+};
 
-decrementBtnEl.addEventListener('click', decrement);
-incrementBtnEl.addEventListener('click', increment);
+const countIncr = function() {
+  counterValue += 1;
+  myValue.textContent = counterValue;
+};
+
+decr.addEventListener("click", countDecr);
+incr.addEventListener("click", countIncr);
+

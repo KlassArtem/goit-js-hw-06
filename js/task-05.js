@@ -3,7 +3,7 @@ const outputEl = document.querySelector('#name-output');
 
 const inpHandle = () => {
 
-    if (inpEl.value.length > 0) {
+    if (inpEl.value.trim() > 0) {        
         outputEl.textContent = inpEl.value;
     } else {
         outputEl.textContent = 'Anonymous';
@@ -11,3 +11,7 @@ const inpHandle = () => {
 }
 
 inpEl.addEventListener('input', inpHandle);
+
+
+
+// add trim   
